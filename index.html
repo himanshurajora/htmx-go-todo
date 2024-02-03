@@ -13,13 +13,13 @@
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
   </head>
 
-  <body>
+  <body class="flex flex-col justify-center items-center">
     <form
       hx-post="/add"
       hx-target="#tasks"
       hx-swap="beforeend"
-      hx-on:after-request="this.reset()"
-      class="flex w-full justify-center items-center py-2"
+      hx-on::after-request="this.reset()"
+      class="flex w-full justify-center items-center py-2 gap-2"
     >
       <input
         type="text"
@@ -27,15 +27,28 @@
         placeholder="Task Name"
         name="task_name"
       />
+      <button class="btn" type="submit">Add</button>
     </form>
     <div
-      class="flex justify-center flex-col items-center w-full gap-2 p-6 prose"
+      class="flex justify-center flex-col items-center w-full gap-2 p-6 prose max-w-xl"
       id="tasks"
     >
       <h1 class="text-xl font-bold">Here's the list of tasks</h1>
       {{range .Tasks}} {{ block "task-list-item" .}}
-      <div class="p-2 border-2 rounded-sm shadow-lg w-full">
-        <h2>{{.Name}} - {{.IsCompleted}}</h2>
+      <div
+        id="task-{{ .Id }}"
+        class="p-2 border-2 rounded-sm shadow-lg w-full flex justify-between items-center"
+      >
+        <h2>{{.Name}}</h2>
+        <button
+          id="{{ .Id }}"
+          hx-delete="/delete?id={{ .Id }}"
+          hx-target="#task-{{ .Id }}"
+          hx-swap="outerHTML"
+          class="btn"
+        >
+          Delete
+        </button>
       </div>
       {{end}} {{end}}
     </div>
