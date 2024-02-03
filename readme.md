@@ -9,7 +9,7 @@
 ╰╯╱╰╯╱╰╯╱╰╯╰╯╰┻━╯╰━╯╱╰╯╱╰━━━┻━━━╯
 ```
 
-Legends say it is the stack of the future. Then why not give it a try.
+Legends say it is the stack of the future. If so? then why not give it a try?
 
 - Add Task
 - List Task
