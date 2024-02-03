@@ -21,4 +21,7 @@ I think that's enough to get started. Maybe we can improve it later. But there a
 Thanks for Reading
 
 Made by [@himanshurajora](https://himanshujangid.com) 
-https://github.com/himanshurajora
+<https://github.com/himanshurajora>
+
+
+**Note: This repository can also work as simple boilerplate**

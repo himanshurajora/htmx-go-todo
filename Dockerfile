@@ -5,7 +5,7 @@ FROM golang:1.16
 WORKDIR /app
 
 # Copy the main.go file into the container
-COPY main.go .
+COPY . .
 
 # Build the Go application
 RUN go build -o app
